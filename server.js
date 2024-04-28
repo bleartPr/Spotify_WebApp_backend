@@ -3,7 +3,7 @@ const path = require('path');
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3030;
 
 // Use bodyParser middleware
 app.use(bodyParser.json());
@@ -132,6 +132,6 @@ app.get('/get_artist_album', (req, res) => {
       });
 });
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });
