@@ -4,6 +4,9 @@ const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3030;
+const cors = require('cors');
+
+app.use(cors());
 
 // Use bodyParser middleware
 app.use(bodyParser.json());
