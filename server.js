@@ -104,7 +104,6 @@ app.get('/get_artist_top_tracks', (req, res) => {
   let headers = {
     'Authorization': 'Bearer ' + access_token
   };
-  console.log("got to 'get artist top tracks'")
   fetch(`https://api.spotify.com/v1/artists/${artist_id_server}/top-tracks`, { headers: headers })
       .then(response => response.json())
       .then(data => {
