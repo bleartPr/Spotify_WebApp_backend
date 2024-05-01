@@ -18,10 +18,6 @@ let artist_id_server = "";
 // app.use(express.json()); // This line is needed to parse JSON body
 app.use(express.static(path.join(__dirname)));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'))
-});
-
 // gets a new api token
 app.get('/get_api_token', (req, res) => {
     var client_id = process.env.ENV_CLIENT_ID;
