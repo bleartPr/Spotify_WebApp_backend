@@ -50,7 +50,7 @@ app.get('/test_api_token', (req, res) => {
       .then(response => {
           if (response.status === 401) {
               // Return the promise chain to continue handling asynchronous calls
-              return fetch('http://localhost:3000/get_api_token')
+              return fetch('https://spotify-webapp-backend.onrender.com/get_api_token')
                   .then(response => response.json())
                   .then(data => {
                       access_token = data.access_token;
