@@ -85,6 +85,21 @@ app.post('/get_artist_search', (req, res) => {
       });
 });
 
+app.post('/get_track_search', (req, res) => {
+  let headers = {
+    'Authorization': 'Bearer ' + access_token
+  };
+  fetch(`https://api.spotify.com/v1/search?query=${req.body.search}&type=track`, { headers: headers })
+      .then(response => response.json())
+      .then(data => {
+        res.json(data);
+      })
+      .catch(error => {
+          console.error("Error occurred:", error);
+          res.status(500).send("Internal Server Error");
+      });
+});
+
 app.get('/get_artist_info', (req, res) => {
   let headers = {
     'Authorization': 'Bearer ' + access_token
